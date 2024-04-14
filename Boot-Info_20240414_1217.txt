@@ -1,0 +1,177 @@
+boot-repair-4ppa2075                                              [20240414_1217]
+
+============================== Boot Info Summary ===============================
+
+ => Syslinux MBR (5.00 and higher) is installed in the MBR of /dev/sda.
+
+sda1: __________________________________________________________________________
+
+    File system:       vfat
+    Boot sector type:  MSWIN4.1: FAT32
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        /boot/grub/grub.cfg /efi/boot/bootx64.efi 
+                       /efi/boot/grubx64.efi /efi/boot/mmx64.efi
+
+md/imsm0: ______________________________________________________________________
+
+    File system:       
+    Boot sector type:  Unknown
+    Boot sector info: 
+
+md/imsm1: ______________________________________________________________________
+
+    File system:       
+    Boot sector type:  Unknown
+    Boot sector info: 
+
+
+================================ 0 OS detected =================================
+
+
+================================ Host/Hardware =================================
+
+CPU architecture: 64-bit
+Video: TU117M [GeForce GTX 1650 Ti Mobile] CometLake-H GT2 [UHD Graphics] from NVIDIA Corporation Intel Corporation
+Live-session OS is Ubuntu 64-bit (Ubuntu 22.04.4 LTS, jammy, x86_64)
+
+===================================== UEFI =====================================
+
+BIOS/UEFI firmware: F.27(15.27) from AMI
+The firmware is EFI-compatible, and is set in EFI-mode for this live-session.
+SecureBoot disabled (confirmed by mokutil).
+BootCurrent: 0003
+Timeout: 5 seconds
+BootOrder: 0003,0000,0001,0002
+Boot0000* ubuntu	HD(1,GPT,fd53f529-a063-4e28-9298-012dca919194,0x800,0x82000)/File(\EFI\ubuntu\shimx64.efi)
+Boot0001* Windows Boot Manager	HD(1,GPT,fd53f529-a063-4e28-9298-012dca919194,0x800,0x82000)/File(\EFI\Microsoft\Boot\bootmgfw.efi)WINDOWS.........x...B.C.D.O.B.J.E.C.T.=.{.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.}...c................
+Boot0002* Internal Hard Disk	PciRoot(0x0)/Pci(0x17,0x0)/Sata(6144,32768,1)/HD(1,GPT,fd53f529-a063-4e28-9298-012dca919194,0x800,0x82000)..BO
+Boot0003* USB Drive (UEFI) - TOSHIBA TransMemory PMAP	PciRoot(0x0)/Pci(0x14,0x0)/USB(0,0)/HD(1,MBR,0x1af82c,0x800,0x1d13340)..BO
+
+
+============================= Drive/Partition Info =============================
+
+Disks info: ____________________________________________________________________
+
+
+Partitions info (1/3): _________________________________________________________
+
+
+Partitions info (2/3): _________________________________________________________
+
+
+Partitions info (3/3): _________________________________________________________
+
+
+fdisk -l (filtered): ___________________________________________________________
+
+Disk nvme1n1: 476.94 GiB, 512110190592 bytes, 1000215216 sectors
+Disk identifier: 7405EDEA-C673-4CAD-AFC8-DC56B5A3A7C6
+             Start        End   Sectors   Size Type
+nvme1n1p1      2048     534527    532480   260M EFI System
+nvme1n1p2    534528     567295     32768    16M Microsoft reserved
+nvme1n1p3    567296  500585754 500018459 238.4G Microsoft basic data
+nvme1n1p4 998348800 1000200191   1851392   904M Windows recovery environment
+nvme1n1p5 500586496  998348799 497762304 237.4G Linux filesystem
+Partition table entries are not in disk order.
+Disk nvme0n1: 27.25 GiB, 29260513280 bytes, 57149440 sectors
+Disk sda: 14.54 GiB, 15610576896 bytes, 30489408 sectors
+Disk identifier: 0x001af82c
+     Boot Start      End  Sectors  Size Id Type
+sda1  *     2048 30489407 30487360 14.5G  c W95 FAT32 (LBA)
+
+parted -lm (filtered): _________________________________________________________
+
+sda:15.6GB:scsi:512:512:msdos:TOSHIBA TransMemory:;
+1:1049kB:15.6GB:15.6GB:fat32::boot, lba;
+nvme0n1:29.3GB:nvme:512:512:unknown:INTEL HBRPEKNX0202AHO:;
+nvme1n1:512GB:nvme:512:512:gpt:INTEL HBRPEKNX0202AH:;
+1:1049kB:274MB:273MB:fat32:EFI system partition:boot, esp;
+2:274MB:290MB:16.8MB::Microsoft reserved partition:msftres;
+3:290MB:256GB:256GB:ntfs:Basic data partition:msftdata;
+5:256GB:511GB:255GB:ext4::;
+4:511GB:512GB:948MB:ntfs::hidden, diag;
+
+blkid (filtered): ______________________________________________________________
+
+NAME    FSTYPE          UUID                                 PARTUUID                             LABEL       PARTLABEL
+sda                                                                                                           
+└─sda1  vfat            A032-1457                            001af82c-01                          UBUNTU 22_0 
+nvme1n1 isw_raid_member                                                                                       
+└─md127                                                                                                       
+nvme0n1 isw_raid_member                                                                                       
+└─md126                                                                                                       
+
+Mount points (filtered): _______________________________________________________
+
+                           Avail Use% Mounted on
+/dev/sda1                   9.9G  32% /cdrom
+efivarfs                  145.5K  22% /sys/firmware/efi/efivars
+
+Mount options (filtered): ______________________________________________________
+
+/dev/sda1                 vfat            ro,noatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+
+====================== sda1/boot/grub/grub.cfg (filtered) ======================
+
+Try or Install Ubuntu
+Ubuntu (safe graphics)
+OEM install (for manufacturers)
+Boot from next volume
+UEFI Firmware Settings
+Test memory
+
+==================== sda1: Location of files loaded by Grub ====================
+
+           GiB - GB             File                                 Fragment(s)
+            ?? = ??             boot/grub/grub.cfg                             1
+
+======================== Unknown MBRs/Boot Sectors/etc =========================
+
+Unknown BootLoader on md/imsm0
+
+Unknown BootLoader on md/imsm1
+
+
+
+=================== blkid (filtered) before raid activation ====================
+
+/dev/nvme0n1: TYPE="isw_raid_member"
+/dev/nvme1n1p1: LABEL_FATBOOT="SYSTEM" LABEL="SYSTEM" UUID="7ECC-E0C6" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI system partition" PARTUUID="fd53f529-a063-4e28-9298-012dca919194"
+/dev/nvme1n1p3: LABEL="Windows" BLOCK_SIZE="512" UUID="01DA7EE44B206B30" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="4eeb86e3-0cf2-4603-bb93-b695bf3dd698"
+/dev/nvme1n1p4: BLOCK_SIZE="512" UUID="01DA7EE44C2446A0" TYPE="ntfs" PARTUUID="b1939483-43c0-488c-9b2b-e1c62900580f"
+/dev/nvme1n1p5: UUID="6a53d9ec-ff31-4f43-9096-700b829c0e05" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="b4ffb653-29db-46b3-a1d6-9de722315082"
+/dev/sda1: LABEL="UBUNTU 22_0" UUID="A032-1457" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="001af82c-01"
+/dev/nvme1n1p2: PARTLABEL="Microsoft reserved partition" PARTUUID="fcf88a86-02d1-4700-adad-7865e5e6a659"
+
+
+==================================== dmraid ====================================
+
+dmraid -si -c
+no block devices found
+dmraid -ay:
+no block devices found
+dmraid -sa -c:
+no block devices found
+
+
+==================================== mdadm =====================================
+mdadm --assemble --scan
+
+mdadm --detail --scan
+ARRAY /dev/md/imsm0 metadata=imsm UUID=123d5880:d21c0427:d27ca9a4:bc2e67c1
+ARRAY /dev/md/imsm1 metadata=imsm UUID=fc8a48a7:c21562ce:464ca55c:c8103724
+Successfully activated RAID.
+
+
+==================== blkid (filtered) after raid activation ====================
+
+/dev/nvme0n1: TYPE="isw_raid_member"
+/dev/sda1: LABEL="UBUNTU 22_0" UUID="A032-1457" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="001af82c-01"
+/dev/nvme1n1: TYPE="isw_raid_member"
+
+
+Suggested repair: ______________________________________________________________
+
+The default repair of the Boot-Repair utility would not act on the boot.
+
